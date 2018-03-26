@@ -1,0 +1,17 @@
+variables:
+  NODEJS_ORG_MIRROR: "http://npm.taobao.org/mirrors/node"
+  DOCKER_REGISTRY: "registry.cn-hangzhou.aliyuncs.com"
+  DOCKER_REGISTRY_NAMESPACE: "jc-network-web3"
+  DOCKER_REGISTRY_USERNAME: "web-deploy-robot@1372190759439936"
+  DOCKER_REGISTRY_PASSWORD: "tnWVGRq3UKORf3Yw0K9a2L0z7"
+
+
+stages:
+- release
+
+
+release-docker-image:
+  stage: release
+  image: docker:latest
+  script:
+  - sh ./build.sh
